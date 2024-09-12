@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOWALA.com</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.2s linear;
+    text-transform: none; /* Removed capitalize to use natural text case */
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url('images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 7%;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7); /* Background for header */
+}
+
+.header .navbar a {
+    font-size: 1.7rem;
+    margin-left: 1rem;
+    color: white;
+}
+
+.header .navbar a:hover {
+    background: #ffc61a;
+    padding: 0.5rem 3rem;
+    border-radius: 15px;
+}
+
+#menu-bars {
+    color: white;
+    font-size: 2rem;
+    display: none;
+}
+
+.navbar.active {
+    top: 10%;
+}
+
+.logo-text h2 {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+}
+
+.logo-text h2 span {
+    color: #ffc61a;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+
+    #menu-bars {
+        display: initial;
+    }
+
+    .navbar {
+        position: absolute;
+        top: -100%;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.9); /* Background for mobile menu */
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.5rem;
+        background: #ffc61a;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+}
+
+.body-structure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Slightly darker background for better form visibility */
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Light transparent background */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #333; /* Darker text color for readability */
+    width: 100%;
+    max-width: 500px; /* Set a max width for larger screens */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333; /* Darker color for better readability */
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc; /* Light gray border for the line */
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px); /* Adjust width to fit container */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #ffc61a;
+    color: #333; /* Darker text for contrast */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #e0a800; /* Slightly darker on hover */
+    transform: scale(1.05);
+}
+
+.register {
+    display: block;
+    margin-top: 10px;
+    color: #ADD8E6; /* Light blue color for the register link */
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.register:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-text">
+            <h2>AUTOWALA <span>.com</span></h2>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="#" id="menu-bars" class="fas fa-bars"></a>
+    </header>
+
+    <div class="body-structure">
+        <div class="form-container">
+            <h1>Login Page</h1>
+            <hr>
+            <form action="login.php" method="post">
+                <div class="form-group">
+                    <label for="uname">Username:</label>
+                    <input type="text" id="uname" name="uname" required>
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass" name="pass" required>
+                </div>
+                <input type="submit" value="Login">
+            </form>
+            <a class="register" href="register.html">Register</a>
+        </div>
+    </div>
+</body>
+</html>

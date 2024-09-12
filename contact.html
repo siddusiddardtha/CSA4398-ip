@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOWALA.com</title>
+    <link rel="stylesheet" href="register.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: 0.2s linear;
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: url('images/background.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0; /* Ensure no extra margin */
+            padding-top: 80px; /* Space for fixed header */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            position: fixed; /* Fix header at the top */
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 5%;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7); /* Add a background to header for better visibility */
+            z-index: 1000; /* Ensure header is on top of other content */
+        }
+
+        .header .navbar {
+            display: flex;
+        }
+
+        .header .navbar a {
+            font-size: 1.7rem;
+            margin-left: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .header .navbar a:hover {
+            background: #ffc61a;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+        }
+
+        #menu-bars {
+            color: white;
+            font-size: 2rem;
+            display: none;
+        }
+
+        .logo-text h2 {
+            color: white;
+            font-size: 3rem; /* Adjusted for better visibility */
+            position: relative;
+        }
+
+        .logo-text h2 span {
+            color: #ffc61a;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 50%;
+            }
+
+            #menu-bars {
+                display: initial;
+            }
+
+            .navbar {
+                position: absolute;
+                top: -100%;
+                right: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.9); /* Add background for mobile menu */
+            }
+
+            .navbar a {
+                display: block;
+                font-size: 1.5rem;
+                background: #ffc61a;
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 2rem;
+            }
+        }
+
+        #contact {
+            background-color: rgba(0, 0, 0, 0.8); /* Light transparent background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px; /* Maximum width for larger screens */
+            text-align: center;
+            margin-top: 80px; /* Space for fixed header */
+        }
+
+        #contact h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem; /* Adjusted for prominence */
+        }
+
+        #contact p {
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #contact form input, #contact form textarea {
+            width: calc(100% - 20px); /* Adjust width to fit container */
+            max-width: 500px; /* Maximum width for input fields */
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.6rem;
+        }
+
+        #contact form button {
+            padding: 10px 20px;
+            background-color: #ffc61a; /* Button background color */
+            color: #333; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.6rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact form button:hover {
+            background-color: #e0a800; /* Slightly darker on hover */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-text">
+            <h2>AUTOWALA <span>.com</span></h2>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="#" id="menu-bars" class="fas fa-bars"></a>
+    </header>
+
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p>If you have any questions, please feel free to contact us using the form below. We are here to assist you with any inquiries you may have.</p>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>

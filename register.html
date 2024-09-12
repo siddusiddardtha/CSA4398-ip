@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOWALA.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: 0.2s linear;
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: url('images/background.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 2rem 7%;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7); /* Background to header for better visibility */
+        }
+
+        .header .navbar a {
+            font-size: 1.7rem;
+            margin-left: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .header .navbar a:hover {
+            background: #ffc61a;
+            padding: 0.5rem 3rem;
+            border-radius: 15px;
+        }
+
+        #menu-bars {
+            color: white;
+            font-size: 2rem;
+            display: none;
+        }
+
+        .logo-text h2 {
+            color: white;
+            font-size: 3rem; /* Adjusted for better visibility */
+            position: absolute;
+        }
+
+        .logo-text h2 span {
+            color: #ffc61a;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 50%;
+            }
+
+            #menu-bars {
+                display: initial;
+            }
+
+            .navbar {
+                position: absolute;
+                top: -100%;
+                right: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.9); /* Background for mobile menu */
+            }
+
+            .navbar a {
+                display: block;
+                font-size: 1.5rem;
+                background: #ffc61a;
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 2rem;
+            }
+        }
+
+        .body-structure {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.8); /* Slightly darker for better contrast */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            color: white;
+            width: 90%;
+            max-width: 600px; /* Set a max width for larger screens */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem; /* Adjusted for prominence */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.6rem;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: calc(100% - 20px); /* Adjust width to fit container */
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1.6rem;
+        }
+
+        input[type="submit"] {
+            background-color: #ffc61a;
+            color: #333; /* Darker text for contrast */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.6rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e0a800; /* Slightly darker on hover */
+            transform: scale(1.05);
+        }
+
+        .register {
+            display: block;
+            margin-top: 10px;
+            color: #ADD8E6;
+            text-decoration: none;
+            font-size: 1.6rem;
+        }
+
+        .register:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 1.4rem; /* Adjust size for better readability */
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-text">
+            <h2>AUTOWALA <span>.com</span></h2>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="#" id="menu-bars" class="fas fa-bars"></a>
+    </header>
+
+    <div class="body-structure">
+        <div class="form-container">
+            <h1>Registration</h1>
+            <hr>
+            <form onsubmit="return validateForm()" action="register.php" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span id="nameError" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" required>
+                    <span id="phoneError" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="emailError" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <span id="usernameError" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <span id="passwordError" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="retypepassword">Retype Password:</label>
+                    <input type="password" id="retypepassword" name="retypepassword" required>
+                    <span id="matchError" class="error-message"></span>
+                </div>
+                <input type="submit" value="Register">
+            </form>
+            <a href="login.html" class="register">LOGIN</a>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const usernamePattern = /^[a-z]{8}$/;
+            const passwordPattern = /^[a-zA-Z]+[@$#][0-9a-z]{6}$/;
+            const phonePattern = /^[0-9]{10}$/;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            let status = true;
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const retypePassword = document.getElementById("retypepassword").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+
+            document.getElementById("usernameError").textContent = '';
+            document.getElementById("passwordError").textContent = '';
+            document.getElementById("phoneError").textContent = '';
+            document.getElementById("matchError").textContent = '';
+            document.getElementById("emailError").textContent = '';
+
+            if (!usernamePattern.test(username)) {
+                document.getElementById("usernameError").textContent = "Username should contain eight lowercase characters";
+                status = false;
+            }
+
+            if (!passwordPattern.test(password)) {
+                document.getElementById("passwordError").textContent = "Password is in the wrong format";
+                status = false;
+            }
+
+            if (password !== retypePassword) {
+                document.getElementById("matchError").textContent = "Passwords do not match";
+                status = false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                document.getElementById("phoneError").textContent = "Phone number should contain 10 digits";
+                status = false;
+            }
+
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent = "Email must be a valid email address";
+                status = false;
+            }
+
+            return status;
+        }
+    </script>
+</body>
+</html>

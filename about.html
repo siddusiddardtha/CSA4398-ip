@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOWALA.com</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: 0.2s linear;
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: url('images/background.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 2rem 7%;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7); /* Add a background to header for better visibility */
+        }
+
+        .header .navbar a {
+            font-size: 1.7rem;
+            margin-left: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .header .navbar a:hover {
+            background: #ffc61a;
+            padding: 0.5rem 3rem;
+            border-radius: 15px;
+        }
+
+        #menu-bars {
+            color: white;
+            font-size: 2rem;
+            display: none;
+        }
+
+        .navbar.active {
+            top: 10%;
+        }
+
+        .logo-text h2 {
+            color: white;
+            font-size: 3rem; /* Adjusted for better visibility */
+            position: absolute;
+        }
+
+        .logo-text h2 span {
+            color: #ffc61a;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 50%;
+            }
+
+            #menu-bars {
+                display: initial;
+            }
+
+            .navbar {
+                position: absolute;
+                top: -100%;
+                right: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.9); /* Add background for mobile menu */
+            }
+
+            .navbar a {
+                display: block;
+                font-size: 1.5rem;
+                background: #ffc61a;
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 2rem;
+            }
+        }
+
+        #about {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9); /* Light transparent background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #333;
+        }
+
+        #about h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #333; /* Darker color for better readability */
+        }
+
+        #about p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 1.6rem; /* Adjusted font size for readability */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-text">
+            <h2>AUTOWALA <span>.com</span></h2>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="#" id="menu-bars" class="fas fa-bars"></a>
+    </header>
+
+    <section id="about">
+        <h1>About Us</h1>
+        <p>Welcome to our Cab Booking Service! We are dedicated to providing you with the best and most reliable transportation options. Our fleet of well-maintained vehicles and professional drivers are here to ensure you reach your destination safely and comfortably.</p>
+        <p>With years of experience in the industry, we understand the importance of punctuality, safety, and customer satisfaction. Whether you need a ride to the airport, a business meeting, or a night out in the city, we've got you covered.</p>
+        <p>Our easy-to-use online booking system makes it convenient for you to schedule your ride at any time. We also offer competitive rates and various payment options to suit your needs. Thank you for choosing our service. We look forward to serving you!</p>
+    </section>
+</body>
+</html>
